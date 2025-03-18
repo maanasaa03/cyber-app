@@ -288,6 +288,46 @@ app.post("/check-blacklist", async (req, res) => {
   }
 });
 
+const UserProgressSchema = new mongoose.Schema({
+  userId: String,
+  moduleId: String,
+  progress: Number, // e.g., 50 for 50%
+  completed: Boolean,
+});
+
+const UserProgress = mongoose.model("UserProgress", UserProgressSchema);
+
+// API to save user progress
+app.post('/progress', async (req, res) => {
+  const { userId, moduleId, progress, completed } = req.body;
+
+  try {
+    let record = await UserProgress.findOne({ userId, moduleId });
+
+    if (record) {
+      record.progress = progress;
+      record.completed = completed;
+    } else {
+      record = new UserProgress({ userId, moduleId, progress, completed });
+    }
+
+    await record.save();
+    res.json({ success: true, progress: record });
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
+  }
+});
+
+// API to get user progress
+app.get('/progress/:userId', async (req, res) => {
+  try {
+    const progress = await UserProgress.find({ userId: req.params.userId });
+    res.json({ success: true, progress });
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
+  }
+});
+
 // Start the server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));

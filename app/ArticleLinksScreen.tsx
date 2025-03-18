@@ -1,5 +1,15 @@
-import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Linking, Alert, ScrollView } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  Linking,
+  Alert,
+  ScrollView,
+  Switch
+} from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useRouter, useLocalSearchParams } from 'expo-router';
 
 type Article = {
@@ -16,7 +26,7 @@ type SummariesData = {
 };
 
 export default function ArticleLinksScreen() {
-  const { module } = useLocalSearchParams<{ module?: string | string[] }>(); // Access the passed module parameter
+  const { module } = useLocalSearchParams<{ module?: string | string[] }>();
   const router = useRouter();
 
   const summaries: { [key: string]: string } = {
@@ -34,8 +44,6 @@ export default function ArticleLinksScreen() {
     "Data encryption is the process of converting information into a secret code to prevent unauthorized access. It protects sensitive data, like financial details, so that only authorized users with the correct key can decode it back into its original form."
   };
   
-
-  // Dummy data: Replace this with actual data or API call for fetching related articles
   const articles: ArticlesData = {
     authandaccess: [
       { title: "Video 1", link: "https://www.youtube.com/watch?v=ngltcjbystg" },
@@ -96,6 +104,49 @@ export default function ArticleLinksScreen() {
   const relatedArticles = moduleKey && articles[moduleKey] ? articles[moduleKey] : [];
   const summaryText = summaries[moduleKey] || "Explore articles on this topic.";
 
+  const [completed, setCompleted] = useState<{ [key: string]: boolean }>({});
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    loadProgress();
+  }, [moduleKey]);
+
+  useEffect(() => {
+    calculateProgress();
+  }, [completed]);
+
+  const loadProgress = async () => {
+    try {
+      const savedProgress = await AsyncStorage.getItem(`progress_${moduleKey}`);
+      if (savedProgress) {
+        setCompleted(JSON.parse(savedProgress));
+      }
+    } catch (error) {
+      console.error("Error loading progress:", error);
+    }
+  };
+
+  const saveProgress = async (updatedProgress: { [key: string]: boolean }) => {
+    try {
+      await AsyncStorage.setItem(`progress_${moduleKey}`, JSON.stringify(updatedProgress));
+    } catch (error) {
+      console.error("Error saving progress:", error);
+    }
+  };
+
+  const toggleCompletion = (title: string) => {
+    const updatedProgress = { ...completed, [title]: !completed[title] };
+    setCompleted(updatedProgress);
+    saveProgress(updatedProgress);
+  };
+
+  const calculateProgress = () => {
+    const totalItems = relatedArticles.length;
+    const completedItems = Object.values(completed).filter((item) => item).length;
+    const percentage = totalItems > 0 ? Math.round((completedItems / totalItems) * 100) : 0;
+    setProgress(percentage);
+  };
+
   const handleLinkPress = async (url: string) => {
     const supported = await Linking.canOpenURL(url);
     if (supported) {
@@ -122,54 +173,53 @@ export default function ArticleLinksScreen() {
         {moduleKey.replace(/([a-z])([A-Z])/g, '$1 $2')}
       </Text>
 
-      
-      {/* Summary Text Container */}
+      <ScrollView>
       <View style={styles.summaryContainer}>
         <Text style={styles.summaryText}>{summaryText}</Text>
       </View>
-  
-      {/* Articles Container */}
-      <ScrollView contentContainerStyle={styles.contentContainer}>
-      <View style={styles.contentContainer}>
-        {relatedArticles.map((article, index) => (
-          <TouchableOpacity
-            key={index}
-            style={styles.articleCard}
-            onPress={() => handleLinkPress(article.link)}
-          >
-            <Text style={styles.articleTitle}>{article.title}</Text>
-          </TouchableOpacity>
-        ))}
-      </View>
       </ScrollView>
-  
-      {/* Back to Home Button */}
+      
+      <ScrollView contentContainerStyle={styles.contentContainer}>
+        {relatedArticles.map((article, index) => (
+          <View key={index} style={styles.articleCard}>
+            <TouchableOpacity onPress={() => handleLinkPress(article.link)}>
+              <Text style={styles.articleTitle}>{article.title}</Text>
+            </TouchableOpacity>
+            <Switch
+              value={completed[article.title] || false}
+              onValueChange={() => toggleCompletion(article.title)}
+            />
+          </View>
+        ))}
+      </ScrollView>
+
+      <View style={styles.progressContainer}>
+        <Text style={styles.progressText}>Progress: {progress}%</Text>
+      </View>
+
       <TouchableOpacity onPress={() => router.back()} style={styles.backButton}>
         <Text style={styles.backButtonText}>Back to Home</Text>
       </TouchableOpacity>
     </View>
   );
-  
-  
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    backgroundColor: '#E7DDFF',  // Background for the whole screen
+    backgroundColor: '#E7DDFF',
   },
   contentContainer: {
     backgroundColor: '#FFFFFF',
     padding: 20,
     borderRadius: 10,
     marginBottom: 20,
-    shadowColor: "#000", 
+    shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
     shadowRadius: 4,
-    elevation: 5, 
-
+    elevation: 5,
   },
   summaryContainer: {
     backgroundColor: '#FFFFFF',
@@ -199,9 +249,23 @@ const styles = StyleSheet.create({
     padding: 15,
     borderRadius: 10,
     marginBottom: 10,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
   articleTitle: {
     fontSize: 16,
+    color: '#FFF',
+  },
+  progressContainer: {
+    padding: 12,
+    marginTop: 20,
+    backgroundColor: '#6A0DAD',
+    borderRadius: 10,
+    alignItems: 'center',
+  },
+  progressText: {
+    fontSize: 18,
     color: '#FFF',
   },
   backButton: {
@@ -210,7 +274,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     alignItems: 'center',
     alignSelf: 'center',
-    width: '60%',        
+    width: '60%',
     marginTop: 20,
   },
   backButtonText: {
@@ -223,7 +287,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginBottom: 20,
   },
-  scrollViewContainer: {
-    flexGrow: 1, // Ensures content inside ScrollView stretches
-  },
 });
+
+
