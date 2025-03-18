@@ -11,6 +11,8 @@ import * as Device from 'expo-device';
 import * as Location from 'expo-location';
 import * as LocalAuthentication from 'expo-local-authentication';
 import { useCameraPermissions } from 'expo-camera';
+import EmailBreachSection from 'app/EmailBreachSection'; // adjust the path as needed
+
 
 export default function CyberScoreScreen() {
   const [cyberScore, setCyberScore] = useState(100);
@@ -173,6 +175,7 @@ export default function CyberScoreScreen() {
           </Text>
         </TouchableOpacity>
       </View>
+      <EmailBreachSection />
     </View>
   );
 }
@@ -289,6 +292,22 @@ const styles = StyleSheet.create({
     textDecorationLine: 'underline',
   },
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
