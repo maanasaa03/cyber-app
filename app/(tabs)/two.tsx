@@ -85,6 +85,17 @@ export default function CyberScoreScreen() {
       issues.push('Location permission granted');
     }
 
+    if (networkInfo.type === Network.NetworkStateType.WIFI) {
+      const ipAddress = await Network.getIpAddressAsync();
+      
+      const isPublicWiFi = !(ipAddress.startsWith("192.168") || ipAddress.startsWith("10.") || ipAddress.startsWith("172.16"));
+      
+      if (isPublicWiFi) {
+        score -= 20;
+        issues.push('Connected to an open/public WiFi (security risk)');
+      }
+    }    
+
     // Set score and label
     setPermissionIssues(issues);
     setCyberScore(score);

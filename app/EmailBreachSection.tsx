@@ -27,7 +27,7 @@ export default function EmailBreachSection() {
         {
           method: 'GET',
           headers: {
-            'X-RapidAPI-Key': 'YOUR_RAPIDAPI_KEY', // Replace with your actual API key
+            'X-RapidAPI-Key': 'YOUR_RAPIDAPI_KEY',
             'X-RapidAPI-Host': 'breachdirectory.p.rapidapi.com',
           },
         }
