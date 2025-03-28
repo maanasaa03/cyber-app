@@ -1,435 +1,406 @@
-[
+{
+  "questions": [
     {
-      "question": "What makes a password strong?",
-      "answer": "A strong password should be at least 12 characters long, include uppercase and lowercase letters, numbers, and special symbols, and avoid common words or personal information."
+      "id": 1,
+      "question": "What is the most basic cybersecurity practice everyone should follow?",
+      "topic": "Fundamentals",
+      "answer": "Using strong, unique passwords for all accounts.",
+      "beginner_answer": "The most important thing is to use good passwords that are hard to guess and different for each account.",
+      "advanced_answer": "The foundational practice is implementing strong credential hygiene - using complex, unique passphrases for each account, ideally managed through a password vault with PBKDF2 or bcrypt hashing."
     },
     {
-      "question": "How often should I change my passwords?",
-      "answer": "Change passwords every 60-90 days for sensitive accounts, or immediately after any security breach notification. Use unique passwords for each account."
+      "id": 2,
+      "question": "Why should you enable two-factor authentication?",
+      "topic": "Authentication",
+      "answer": "It adds an extra layer of security beyond just a password.",
+      "beginner_answer": "It's like having a second lock on your door. Even if someone gets your password, they still need your phone to get in.",
+      "advanced_answer": "2FA implements multi-factor authentication by requiring both knowledge (password) and possession (device) factors, significantly reducing account compromise risk from credential stuffing or phishing attacks."
     },
     {
-      "question": "Are password managers safe to use?",
-      "answer": "Reputable password managers use strong encryption and are much safer than reusing weak passwords. Choose one with zero-knowledge architecture and two-factor authentication."
+      "id": 3,
+      "question": "What should you do before connecting to public Wi-Fi?",
+      "topic": "Network Security",
+      "answer": "Use a VPN to encrypt your connection.",
+      "beginner_answer": "Turn on a VPN app to keep your information private, like putting your internet in a secret tunnel.",
+      "advanced_answer": "Establish a VPN tunnel using protocols like WireGuard or OpenVPN with AES-256 encryption to prevent MITM attacks and packet sniffing on untrusted networks."
     },
     {
-      "question": "What is two-factor authentication?",
-      "answer": "2FA adds an extra security layer by requiring two verification methods - typically your password plus a code from your phone or authentication app."
+      "id": 4,
+      "question": "How often should you update your software?",
+      "topic": "System Maintenance",
+      "answer": "As soon as updates are available.",
+      "beginner_answer": "Whenever your phone or computer says there's an update - don't put it off!",
+      "advanced_answer": "Implement a patch management policy applying critical security updates within 72 hours of release, with regular maintenance windows for other updates."
     },
     {
-      "question": "How can I recognize a phishing email?",
-      "answer": "Look for generic greetings, urgent threats, suspicious links, poor grammar, and mismatched sender addresses. Hover over links to check actual URLs before clicking."
+      "id": 5,
+      "question": "What's the safest way to handle email attachments?",
+      "topic": "Email Security",
+      "answer": "Don't open attachments from unknown senders.",
+      "beginner_answer": "If you don't know who sent it, don't open it - even if it looks important.",
+      "advanced_answer": "Employ a zero-trust approach: verify sender authenticity via SPF/DKIM/DMARC, scan attachments in sandboxed environments, and consider converting to safer formats (e.g., PDF to text)."
     },
     {
-      "question": "What should I do if I clicked a phishing link?",
-      "answer": "Immediately disconnect from the internet, run antivirus scans, change affected passwords, enable 2FA, and monitor accounts for suspicious activity."
+      "id": 6,
+      "question": "What does HTTPS in a website URL indicate?",
+      "topic": "Web Security",
+      "answer": "The connection to the website is encrypted.",
+      "beginner_answer": "It means the website is safe to use for private information like passwords.",
+      "advanced_answer": "HTTPS implements TLS encryption (typically 1.2 or 1.3) to establish secure channels preventing eavesdropping and tampering, verified by X.509 certificates from trusted CAs."
     },
     {
-      "question": "Is public WiFi safe for banking?",
-      "answer": "Avoid sensitive transactions on public WiFi. If necessary, use a reputable VPN service to encrypt your connection and ensure you're on the legitimate network."
+      "id": 7,
+      "question": "Why shouldn't you use the same password everywhere?",
+      "topic": "Password Security",
+      "answer": "If one account is compromised, all accounts become vulnerable.",
+      "beginner_answer": "It's like using the same key for your house, car, and safe - if someone copies it, they can get into everything.",
+      "advanced_answer": "Credential stuffing attacks leverage password reuse across sites; unique passwords limit breach impact through compartmentalization following the principle of least privilege."
     },
     {
-      "question": "How do I know if my computer has malware?",
-      "answer": "Warning signs include slow performance, unexpected pop-ups, changed browser settings, unfamiliar programs, and high network activity when idle."
+      "id": 8,
+      "question": "What is a phishing attack?",
+      "topic": "Social Engineering",
+      "answer": "A fraudulent attempt to obtain sensitive information by disguising as a trustworthy entity.",
+      "beginner_answer": "When scammers pretend to be from a real company to trick you into giving passwords or money.",
+      "advanced_answer": "A social engineering attack vector utilizing spoofed communications (email, SMS, etc.) to harvest credentials or deploy malware, often employing urgency tactics and domain impersonation."
     },
     {
-      "question": "What's the best way to remove malware?",
-      "answer": "Boot in safe mode, run scans with multiple antivirus tools, delete suspicious programs, reset browsers to defaults, and restore from clean backups if available."
+      "id": 9,
+      "question": "How can you identify a secure website?",
+      "topic": "Web Security",
+      "answer": "Look for HTTPS and a padlock icon in the address bar.",
+      "beginner_answer": "Check for a little lock symbol near the website address at the top of your browser.",
+      "advanced_answer": "Verify TLS implementation through browser indicators, check certificate validity (including SANs and expiration), and validate domain ownership via WHOIS records when necessary."
     },
     {
-      "question": "Should I pay the ransom if hit by ransomware?",
-      "answer": "Law enforcement advises against paying, as it funds criminals and doesn't guarantee file recovery. Isolate infected systems and consult cybersecurity professionals."
+      "id": 10,
+      "question": "What should you do if you receive a suspicious email?",
+      "topic": "Email Security",
+      "answer": "Don't click any links and report it as spam.",
+      "beginner_answer": "Don't open it or click anything - just delete it or mark as junk.",
+      "advanced_answer": "Analyze headers for spoofing indicators, report to your organization's SOC via the phishing reporting toolbox (if available), and submit to anti-phishing working groups like APWG."
     },
     {
-      "question": "How can I secure my home WiFi network?",
-      "answer": "Change default router credentials, enable WPA3 encryption, hide your SSID, disable WPS, create a guest network, and keep firmware updated."
+      "id": 11,
+      "question": "Why is it important to log out of accounts on shared computers?",
+      "topic": "Access Control",
+      "answer": "To prevent unauthorized access to your accounts.",
+      "beginner_answer": "So the next person who uses the computer can't get into your stuff.",
+      "advanced_answer": "Terminating sessions prevents session hijacking attacks and maintains the confidentiality aspect of the CIA triad when using untrusted endpoints."
     },
     {
-      "question": "What is a VPN and do I need one?",
-      "answer": "A Virtual Private Network encrypts your internet traffic. Essential for public WiFi users, remote workers, and anyone wanting enhanced privacy against ISPs and hackers."
+      "id": 12,
+      "question": "What is malware?",
+      "topic": "Threats",
+      "answer": "Malicious software designed to harm or exploit devices.",
+      "beginner_answer": "Bad computer programs that can steal information or break your devices.",
+      "advanced_answer": "A class of malicious code including viruses, worms, trojans, ransomware, and spyware that exploits system vulnerabilities to compromise confidentiality, integrity, or availability."
     },
     {
-      "question": "How do I safely dispose of old devices?",
-      "answer": "Perform factory reset, remove all storage media, physically destroy drives if containing sensitive data, and use certified e-waste recyclers."
+      "id": 13,
+      "question": "How can you protect yourself from ransomware?",
+      "topic": "Threat Protection",
+      "answer": "Maintain regular backups and don't open suspicious attachments.",
+      "beginner_answer": "Keep copies of important files somewhere safe (like the cloud) and be careful with email attachments.",
+      "advanced_answer": "Implement the 3-2-1 backup strategy (3 copies, 2 media types, 1 offsite), employ application whitelisting, and maintain air-gapped backups to enable recovery without paying ransoms."
     },
     {
+      "id": 14,
+      "question": "What is a password manager?",
+      "topic": "Password Security",
+      "answer": "A tool that securely stores and manages passwords.",
+      "beginner_answer": "A safe digital vault that remembers all your passwords so you don't have to.",
+      "advanced_answer": "A cryptographic application utilizing AES-256 encryption to store credentials securely, often with features like password generation, breach monitoring, and secure sharing following zero-knowledge architecture principles."
+    },
+    {
+      "id": 15,
+      "question": "Why should you be careful with social media privacy settings?",
+      "topic": "Privacy",
+      "answer": "To control who can see your personal information.",
+      "beginner_answer": "So strangers can't see your private photos or know when you're on vacation.",
+      "advanced_answer": "Proper configuration limits OSINT gathering by threat actors who exploit oversharing for social engineering, physical security breaches, or credential recovery attacks."
+    },
+    {
+      "id": 16,
+      "question": "What is encryption?",
+      "topic": "Data Protection",
+      "answer": "The process of encoding information to make it unreadable to unauthorized parties.",
+      "beginner_answer": "Scrambling information so only people with the 'key' can read it.",
+      "advanced_answer": "The mathematical transformation of plaintext into ciphertext using cryptographic algorithms (e.g., AES, RSA) and keys to ensure confidentiality through computational complexity barriers."
+    },
+    {
+      "id": 17,
+      "question": "How often should you change your passwords?",
+      "topic": "Password Security",
+      "answer": "When there's a breach or every 3-6 months for critical accounts.",
+      "beginner_answer": "Every few months for important accounts like email and banking.",
+      "advanced_answer": "NIST guidelines now recommend changing only when compromise is suspected, focusing instead on password length/complexity and MFA implementation."
+    },
+    {
+      "id": 18,
+      "question": "What is a VPN and why use one?",
+      "topic": "Network Security",
+      "answer": "A Virtual Private Network that encrypts your internet connection.",
+      "beginner_answer": "A tool that keeps your internet activity private, especially on public Wi-Fi.",
+      "advanced_answer": "A network tunneling solution establishing encrypted overlay networks (often using IPsec or SSL/TLS) to protect against eavesdropping, enable secure remote access, and bypass geographic restrictions."
+    },
+    {
+      "id": 19,
+      "question": "What should you do before selling an old device?",
+      "topic": "Data Protection",
+      "answer": "Perform a factory reset and erase all data.",
+      "beginner_answer": "Wipe everything clean using the reset option in settings.",
+      "advanced_answer": "Execute a secure wipe using DoD 5220.22-M standards (multiple overwrite passes) or cryptographic erasure for SSDs to prevent forensic data recovery."
+    },
+    {
+      "id": 20,
       "question": "What is social engineering?",
-      "answer": "Psychological manipulation tactics used by attackers to trick people into revealing sensitive information or performing unsafe actions."
+      "topic": "Social Engineering",
+      "answer": "Manipulating people into revealing confidential information.",
+      "beginner_answer": "Tricking people into giving up passwords or access.",
+      "advanced_answer": "Psychological manipulation tactics (pretexting, baiting, quid pro quo) exploiting human trust to bypass technical security controls in the attack chain."
     },
     {
-      "question": "How can I protect against identity theft?",
-      "answer": "Freeze credit reports, use unique passwords, enable 2FA, monitor financial statements, shred sensitive documents, and be wary of oversharing online."
+      "id": 21,
+      "question": "Why shouldn't you jailbreak or root your device?",
+      "topic": "Device Security",
+      "answer": "It removes built-in security protections.",
+      "beginner_answer": "It makes your phone easier to hack by removing safety features.",
+      "advanced_answer": "Privilege escalation bypasses sandboxing, disables SELinux/AppArmor protections, and voids hardware-backed key attestation, dramatically increasing attack surface."
     },
     {
-      "question": "Are software updates really that important?",
-      "answer": "Critical updates often patch security vulnerabilities. Enable automatic updates for OS, browsers, plugins, and all installed applications."
-    },
-    {
-      "question": "What is encryption and why does it matter?",
-      "answer": "Encryption scrambles data so only authorized parties can read it. Essential for protecting sensitive communications and stored information from interception."
-    },
-    {
-      "question": "How do I create secure backup routines?",
-      "answer": "Follow the 3-2-1 rule: 3 copies of data, on 2 different media types, with 1 copy stored offline/offsite. Test restores periodically."
-    },
-    {
-      "question": "What should I do after a data breach?",
-      "answer": "Change affected passwords immediately, enable 2FA, watch for phishing attempts, monitor accounts/credit, and consider credit freezes if financial data was exposed."
-    },
-    {
-      "question": "How can I tell if a website is secure?",
-      "answer": "Look for HTTPS (not HTTP) and a padlock icon in the address bar. Check for valid certificates, and be wary of sites with SSL errors or expired certificates."
-    },
-    {
-      "question": "What are the risks of IoT devices?",
-      "answer": "Many smart devices have weak security, default passwords, and unpatched vulnerabilities that can compromise your entire home network if not properly secured."
-    },
-    {
-      "question": "How do I secure my smartphone?",
-      "answer": "Use strong biometric/PIN locks, enable encryption, install apps only from official stores, keep OS updated, review app permissions, and enable remote wipe."
-    },
-    {
-      "question": "What is zero trust security?",
-      "answer": "Security model that assumes threats exist both outside and inside networks, requiring verification for every access attempt regardless of location or device."
-    },
-    {
-      "question": "How can I protect my children online?",
-      "answer": "Use parental controls, educate about privacy risks, monitor activity, enable safe search, keep devices in common areas, and maintain open communication."
-    },
-    {
-      "question": "What is dark web monitoring?",
-      "answer": "Services that scan underground markets for your personal/credential information, alerting you if your data appears in breaches or for sale."
-    },
-    {
-      "question": "How do I securely work from home?",
-      "answer": "Use company-approved VPNs, secure home WiFi, keep work/personal devices separate, lock screens when away, and follow organizational security policies."
-    },
-    {
-      "question": "What is a brute force attack?",
-      "answer": "When attackers try countless password combinations to gain access. Prevent by using complex passwords, account lockouts, and rate limiting."
-    },
-    {
-      "question": "How can I prevent SIM swapping?",
-      "answer": "Use authentication apps instead of SMS codes, set PINs with carriers, be wary of phishing for personal info, and monitor account activity closely."
-    },
-    {
+      "id": 22,
       "question": "What is multi-factor authentication?",
-      "answer": "Security process requiring multiple verification methods (something you know, have, and/or are) for access. More secure than passwords alone."
+      "topic": "Authentication",
+      "answer": "Using two or more methods to verify your identity.",
+      "beginner_answer": "Proving who you are in multiple ways, like with a password plus a text code.",
+      "advanced_answer": "An IAM control requiring multiple authentication factors (knowledge, possession, inherence) from distinct categories to achieve defense-in-depth against credential compromise."
     },
     {
-      "question": "How do I report cybercrime?",
-      "answer": "Contact local law enforcement, national cybercrime units (like FBI IC3 in US), the affected service provider, and credit bureaus if financial data was compromised."
+      "id": 23,
+      "question": "How can you spot a fake website?",
+      "topic": "Web Security",
+      "answer": "Check for misspellings in the URL and lack of HTTPS.",
+      "beginner_answer": "Look for small mistakes in the web address and missing padlock symbol.",
+      "advanced_answer": "Analyze domain registration details, inspect TLS certificates for anomalies, verify domain homogeneity (homograph attacks), and check for poor design/grammar indicative of phishing kits."
     },
     {
-      "question": "What is endpoint security?",
-      "answer": "Protection for devices (endpoints) like computers and phones that connect to networks, using antivirus, firewalls, encryption, and behavioral monitoring tools."
+      "id": 24,
+      "question": "What is a firewall?",
+      "topic": "Network Security",
+      "answer": "A security system that controls network traffic.",
+      "beginner_answer": "A digital barrier that blocks bad internet traffic.",
+      "advanced_answer": "A network security device (hardware or software) enforcing access control policies between networks using stateful packet inspection, application filtering, and deep packet inspection."
     },
     {
-      "question": "How can I spot fake antivirus software?",
-      "answer": "Legitimate security software doesn't use scare tactics. Avoid pop-up warnings, too-good-to-be-true claims, and only download from official vendor sites."
+      "id": 25,
+      "question": "Why should you disable Bluetooth when not in use?",
+      "topic": "Wireless Security",
+      "answer": "To prevent unauthorized access to your device.",
+      "beginner_answer": "So hackers can't connect to your phone without you knowing.",
+      "advanced_answer": "Reduces attack surface by closing potential entry points for Bluetooth-based exploits like BlueBorne or KNOB attacks that target protocol vulnerabilities."
     },
     {
-      "question": "What is a firewall and do I need one?",
-      "answer": "Firewalls monitor/control network traffic based on security rules. Essential for all internet-connected devices - enable both software and hardware firewalls."
+      "id": 26,
+      "question": "What is a security patch?",
+      "topic": "System Maintenance",
+      "answer": "An update that fixes vulnerabilities in software.",
+      "beginner_answer": "A fix that plugs security holes in your apps or operating system.",
+      "advanced_answer": "A software modification addressing identified CVEs (Common Vulnerabilities and Exposures) that could be exploited if left unpatched."
     },
     {
-      "question": "How do I securely delete files?",
-      "answer": "Use file shredding software that overwrites data multiple times. For SSDs, use built-in secure erase commands as traditional overwriting may not work."
+      "id": 27,
+      "question": "How can you securely share passwords with family members?",
+      "topic": "Password Security",
+      "answer": "Use a password manager with sharing features.",
+      "beginner_answer": "Through a trusted password manager app that lets you share safely.",
+      "advanced_answer": "Utilize enterprise password managers with granular sharing controls, audit logging, and zero-knowledge encryption like Bitwarden Organizations or 1Password Families."
     },
     {
-      "question": "What are the risks of jailbreaking/rooting?",
-      "answer": "Removes built-in security protections, exposes devices to malware, voids warranties, and often prevents security updates - strongly discouraged."
-    },
-    {
-      "question": "How can I protect my social media accounts?",
-      "answer": "Use strong unique passwords, enable 2FA, review privacy settings, be wary of third-party apps, limit personal info sharing, and watch for impersonators."
-    },
-    {
-      "question": "What is a keylogger?",
-      "answer": "Malicious software/hardware that records keystrokes to steal passwords and sensitive data. Prevent with updated antivirus and physical security checks."
-    },
-    {
-      "question": "How do I choose a secure messaging app?",
-      "answer": "Look for end-to-end encryption, open-source code, independent audits, disappearing messages, and providers with strong privacy policies like Signal."
-    },
-    {
-      "question": "What is whaling in cybersecurity?",
-      "answer": "Targeted phishing attacks against high-level executives involving forged emails requesting sensitive actions like wire transfers or data sharing."
-    },
-    {
-      "question": "How can I secure my email account?",
-      "answer": "Use strong unique password, enable 2FA, review connected apps, beware phishing, encrypt sensitive emails, and regularly check login activity."
-    },
-    {
-      "question": "What is a DDoS attack?",
-      "answer": "Distributed Denial of Service attacks overwhelm systems with traffic from multiple sources. Mitigate with cloud protection services and network redundancies."
-    },
-    {
-      "question": "How do I protect against USB drive threats?",
-      "answer": "Disable autorun, scan all external media with antivirus before opening, encrypt sensitive files, and consider physically write-locking important drives."
-    },
-    {
+      "id": 28,
       "question": "What is biometric authentication?",
-      "answer": "Security method using unique biological traits like fingerprints or facial recognition. Convenient but should be combined with other factors for important accounts."
+      "topic": "Authentication",
+      "answer": "Using physical characteristics like fingerprints for verification.",
+      "beginner_answer": "Unlocking devices with your face or fingerprint.",
+      "advanced_answer": "Authentication via unique physiological (fingerprint, iris) or behavioral (keystroke dynamics) characteristics stored as mathematical representations in secure enclaves."
     },
     {
-      "question": "How can I browse anonymously?",
-      "answer": "Use Tor browser for maximum anonymity, or VPNs with privacy-focused providers that don't log activity. Understand that complete anonymity is extremely difficult."
+      "id": 29,
+      "question": "Why shouldn't you use public USB charging stations?",
+      "topic": "Device Security",
+      "answer": "They could be modified to install malware.",
+      "beginner_answer": "They might secretly install bad software on your phone.",
+      "advanced_answer": "Juice jacking attacks can deploy malware or exfiltrate data via malicious charging stations exploiting USB's data transfer capabilities."
     },
     {
-      "question": "What is a man-in-the-middle attack?",
-      "answer": "When attackers secretly intercept/relay communications between two parties. Prevent by using encrypted connections (HTTPS/SSL) and verifying certificates."
+      "id": 30,
+      "question": "What is a data breach?",
+      "topic": "Threats",
+      "answer": "Unauthorized access to confidential data.",
+      "beginner_answer": "When hackers steal private information from companies.",
+      "advanced_answer": "A security incident where sensitive, protected or confidential data is copied, transmitted, viewed, stolen or used by unauthorized individuals."
     },
     {
-      "question": "How do I secure my cloud storage?",
-      "answer": "Enable 2FA, use strong passwords, encrypt sensitive files before uploading, manage sharing permissions carefully, and monitor access logs regularly."
+      "id": 31,
+      "question": "How can you protect your home Wi-Fi network?",
+      "topic": "Network Security",
+      "answer": "Use strong encryption (WPA3) and change the default password.",
+      "beginner_answer": "Pick a good router password and use WPA2/WPA3 security.",
+      "advanced_answer": "Implement WPA3 with 192-bit security, disable WPS, use a separate guest network, enable MAC filtering, and maintain current firmware with known vulnerabilities patched."
     },
     {
-      "question": "What is a security token?",
-      "answer": "Physical device or software that generates one-time codes for two-factor authentication, providing stronger security than SMS-based verification."
+      "id": 32,
+      "question": "What is the principle of least privilege?",
+      "topic": "Access Control",
+      "answer": "Giving users only the access they need to perform their tasks.",
+      "beginner_answer": "Only giving people access to what they absolutely need.",
+      "advanced_answer": "A security concept where users and processes are granted minimum permissions necessary to perform authorized activities, reducing attack surface and blast radius."
     },
     {
-      "question": "How can I tell if my webcam is hacked?",
-      "answer": "Look for unexpected activity lights, strange files, high network usage, and antivirus alerts. Cover cameras when not in use and disable remote access features."
+      "id": 33,
+      "question": "Why should you review app permissions?",
+      "topic": "Mobile Security",
+      "answer": "To limit what data apps can access on your device.",
+      "beginner_answer": "So apps don't get information they don't need, like your contacts or location.",
+      "advanced_answer": "Prevents overprivileged apps from creating unnecessary data exfiltration channels and reduces the impact of potential app compromise via permission containment."
     },
     {
-      "question": "What is a honeypot in cybersecurity?",
-      "answer": "Decoy systems designed to attract and study attackers, helping security professionals understand threats while keeping real systems protected."
+      "id": 34,
+      "question": "What is endpoint security?",
+      "topic": "Device Security",
+      "answer": "Protecting devices that connect to your network.",
+      "beginner_answer": "Keeping computers and phones safe from hackers.",
+      "advanced_answer": "A cybersecurity approach employing EDR solutions, application control, device encryption, and behavioral analysis to secure network entry points against compromise."
     },
     {
-      "question": "How do I protect my smart home devices?",
-      "answer": "Change default passwords, segment on separate network, disable unnecessary features, keep firmware updated, and review permissions/access controls."
+      "id": 35,
+      "question": "How can you securely dispose of old hard drives?",
+      "topic": "Data Protection",
+      "answer": "Physically destroy them or use specialized wiping software.",
+      "beginner_answer": "Either smash them completely or use special programs to erase everything.",
+      "advanced_answer": "For HDDs: degaussing or physical destruction (shredding). For SSDs: ATA Secure Erase or cryptographic erasure due to wear leveling making traditional wiping ineffective."
     },
     {
+      "id": 36,
       "question": "What is a zero-day vulnerability?",
-      "answer": "Previously unknown software flaw that attackers exploit before developers can create and distribute a patch, making defenses particularly challenging."
+      "topic": "Threats",
+      "answer": "A security flaw unknown to the vendor with no available patch.",
+      "beginner_answer": "A security hole that the software makers don't know about yet.",
+      "advanced_answer": "An unknown vulnerability in released software that attackers exploit before developers can issue patches, requiring heuristic detection and virtual patching."
     },
     {
-      "question": "How can I securely use public computers?",
-      "answer": "Avoid logging into sensitive accounts, use private browsing, don't save files locally, clear history after use, and consider using a live OS from USB."
+      "id": 37,
+      "question": "Why should you use a separate email for important accounts?",
+      "topic": "Account Security",
+      "answer": "To limit damage if one account is compromised.",
+      "beginner_answer": "So if one email gets hacked, not all your important accounts are at risk.",
+      "advanced_answer": "Compartmentalization reduces attack surface and prevents credential stuffing attacks from compromising high-value assets through unrelated breaches."
     },
     {
+      "id": 38,
+      "question": "What is a security token?",
+      "topic": "Authentication",
+      "answer": "A physical device that generates authentication codes.",
+      "beginner_answer": "A small device or app that gives you special codes to log in securely.",
+      "advanced_answer": "A hardware (Yubikey) or software (Google Authenticator) device implementing OATH TOTP or FIDO2 standards for strong second-factor authentication."
+    },
+    {
+      "id": 39,
+      "question": "How can you check if your passwords have been compromised?",
+      "topic": "Password Security",
+      "answer": "Use Have I Been Pwned or your password manager's breach checker.",
+      "beginner_answer": "Websites like Have I Been Pwned can tell you if your password was in a hack.",
+      "advanced_answer": "Leverage services that check credentials against databases of breached hashes (k-anonymously via range queries) or use password managers with integrated breach monitoring."
+    },
+    {
+      "id": 40,
+      "question": "What is a man-in-the-middle attack?",
+      "topic": "Network Security",
+      "answer": "When an attacker secretly intercepts communications.",
+      "beginner_answer": "When a hacker gets between you and a website to steal information.",
+      "advanced_answer": "An attack where the adversary secretly relays and potentially alters communications between two parties who believe they are directly communicating, often exploiting weak certificate validation."
+    },
+    {
+      "id": 41,
+      "question": "Why should you be cautious with browser extensions?",
+      "topic": "Web Security",
+      "answer": "They can have security vulnerabilities or malicious code.",
+      "beginner_answer": "Some extensions can spy on you or contain viruses.",
+      "advanced_answer": "Extensions operate with browser privilege and can access sensitive data, modify pages, or introduce supply chain vulnerabilities through third-party dependencies."
+    },
+    {
+      "id": 42,
       "question": "What is sandboxing?",
-      "answer": "Security technique that isolates running programs to prevent system-wide infections. Modern browsers and operating systems use this to contain potential threats."
+      "topic": "System Security",
+      "answer": "Isolating programs to limit potential damage from malware.",
+      "beginner_answer": "Running apps in a protected bubble so they can't harm your whole system.",
+      "advanced_answer": "A security mechanism separating running processes via namespaces, capability restrictions, and mandatory access controls to contain exploits and limit privilege escalation."
     },
     {
-      "question": "How do I recognize tech support scams?",
-      "answer": "Legitimate companies won't call unsolicited about viruses. Never grant remote access or pay for unsolicited services - these are always scams."
+      "id": 43,
+      "question": "How can you protect against keyloggers?",
+      "topic": "Threat Protection",
+      "answer": "Use antivirus software and virtual keyboards for sensitive inputs.",
+      "beginner_answer": "Keep security software updated and use on-screen keyboards for passwords.",
+      "advanced_answer": "Employ kernel-level anti-malware solutions, utilize hardware security keys, and implement behavioral analysis to detect anomalous input capture attempts."
     },
     {
-      "question": "What is a passwordless login?",
-      "answer": "Authentication methods that replace traditional passwords with more secure options like biometrics, security keys, or one-time codes from trusted devices."
+      "id": 44,
+      "question": "What is the difference between authentication and authorization?",
+      "topic": "Access Control",
+      "answer": "Authentication verifies identity, authorization determines access rights.",
+      "beginner_answer": "Authentication is proving who you are, authorization is what you're allowed to do.",
+      "advanced_answer": "Authentication establishes identity via credentials, biometrics, or tokens (AuthN), while authorization enforces policy-based access controls (AuthZ) following authentication."
     },
     {
-      "question": "How can I verify email sender authenticity?",
-      "answer": "Check full email headers for SPF, DKIM, and DMARC authentication results. Be wary of display names that don't match actual addresses."
+      "id": 45,
+      "question": "Why should you encrypt your backups?",
+      "topic": "Data Protection",
+      "answer": "To protect data if backup media is lost or stolen.",
+      "beginner_answer": "So if someone gets your backup drive, they can't read your files.",
+      "advanced_answer": "Prevents data exfiltration from physical media theft and complies with data protection regulations requiring encryption of sensitive data at rest."
     },
     {
-      "question": "What is a rainbow table attack?",
-      "answer": "Method to reverse password hashes using precomputed tables. Prevent by using salted hashes and strong, unique passwords for each account."
+      "id": 46,
+      "question": "What is a honeypot in cybersecurity?",
+      "topic": "Threat Detection",
+      "answer": "A decoy system designed to attract and detect attackers.",
+      "beginner_answer": "A fake target set up to catch hackers and study their methods.",
+      "advanced_answer": "A deception technology that mimics vulnerable systems/services to divert attackers from production assets while gathering threat intelligence and attack patterns."
     },
     {
-      "question": "How do I secure my gaming accounts?",
-      "answer": "Use unique passwords, enable 2FA, beware phishing scams, limit personal info sharing, and monitor for unauthorized purchases or account changes."
+      "id": 47,
+      "question": "How can you securely use cloud storage?",
+      "topic": "Cloud Security",
+      "answer": "Enable two-factor authentication and encrypt sensitive files before uploading.",
+      "beginner_answer": "Turn on extra login security and password-protect important documents.",
+      "advanced_answer": "Implement client-side encryption with customer-managed keys, enforce strict access controls, and use enterprise-grade solutions with audit logging and DLP integration."
     },
     {
-      "question": "What is a logic bomb?",
-      "answer": "Malicious code designed to execute when specific conditions are met, often planted by insiders. Detect with behavior monitoring and code audits."
+      "id": 48,
+      "question": "What is the CIA triad in cybersecurity?",
+      "topic": "Fundamentals",
+      "answer": "Confidentiality, Integrity, and Availability - the core security principles.",
+      "beginner_answer": "The three main goals of security: keeping secrets, preventing changes, and ensuring access.",
+      "advanced_answer": "The foundational security model: Confidentiality (preventing unauthorized disclosure), Integrity (preventing unauthorized alteration), and Availability (ensuring authorized access)."
     },
     {
-      "question": "How can I protect my privacy online?",
-      "answer": "Use privacy-focused browsers/search engines, enable tracker blocking, limit social media sharing, review app permissions, and consider using aliases for non-critical accounts."
+      "id": 49,
+      "question": "Why should you monitor your credit reports?",
+      "topic": "Identity Protection",
+      "answer": "To detect signs of identity theft early.",
+      "beginner_answer": "To catch if someone is using your identity to open accounts.",
+      "advanced_answer": "Enables early detection of PII misuse following breaches through new account fraud indicators and supports prompt freezing of compromised credentials."
     },
     {
-      "question": "What is typosquatting?",
-      "answer": "When attackers register domains similar to popular sites (like 'goggle.com') to catch mistyped URLs and deliver malware or phishing pages."
-    },
-    {
-      "question": "How do I securely use Bluetooth?",
-      "answer": "Disable when not in use, use non-discoverable mode, avoid pairing in public, use strong PINs, and keep devices updated with latest security patches."
-    },
-    {
-      "question": "What is a watering hole attack?",
-      "answer": "When attackers compromise websites frequented by target groups, injecting malware to infect visitors. Protect with updated software and script blockers."
-    },
-    {
-      "question": "How can I detect credit card skimmers?",
-      "answer": "Inspect ATMs/gas pumps for loose parts, mismatched colors, or hidden cameras. Use contactless payment when possible and monitor statements closely."
-    },
-    {
-      "question": "What is a security operations center?",
-      "answer": "Centralized unit that monitors, detects, analyzes and responds to cybersecurity incidents using people, processes and technology working 24/7."
-    },
-    {
-      "question": "How do I protect against insider threats?",
-      "answer": "Implement least privilege access, monitor user activity, conduct background checks, enforce separation of duties, and maintain clear security policies."
-    },
-    {
-      "question": "What is a canary trap?",
-      "answer": "Placing unique fake data to identify leaks - if this data appears outside authorized channels, you can trace the breach source."
-    },
-    {
-      "question": "How can I securely share files?",
-      "answer": "Use encrypted sharing services, set expiration dates/access limits, password-protect sensitive files, and verify recipients before sending."
-    },
-    {
-      "question": "What is a smishing attack?",
-      "answer": "Phishing via SMS/text messages. Never click links in unexpected texts - contact the organization through verified channels to verify requests."
-    },
-    {
-      "question": "How do I secure my cryptocurrency?",
-      "answer": "Use hardware wallets for large amounts, enable all security features, keep recovery phrases offline, double-check addresses, and beware too-good-to-be-true offers."
-    },
-    {
-      "question": "What is a war driving attack?",
-      "answer": "When attackers search for vulnerable WiFi networks by driving around with scanning equipment. Secure your WiFi to prevent becoming a target."
-    },
-    {
-      "question": "How can I protect my intellectual property?",
-      "answer": "Use NDAs, document creation dates, register copyrights/patents, implement access controls, watermark sensitive files, and monitor for unauthorized use."
-    },
-    {
-      "question": "What is a tailgating attack?",
-      "answer": "Physical security breach where unauthorized persons follow employees into restricted areas. Prevent with access controls, badges, and security awareness training."
-    },
-    {
-      "question": "How do I securely configure a new device?",
-      "answer": "Change default credentials, disable unnecessary services, apply all updates, configure firewalls, enable encryption, and remove bloatware/unneeded apps."
-    },
-    {
-      "question": "What is a dictionary attack?",
-      "answer": "Password cracking method that tries common words/phrases. Prevent by using complex passwords with multiple character types and avoiding dictionary words."
-    },
-    {
-      "question": "How can I protect my online accounts when traveling?",
-      "answer": "Use VPN on public networks, enable 2FA, notify banks of travel plans, avoid sensitive transactions on shared devices, and consider temporary travel devices."
-    },
-    {
-      "question": "What is a supply chain attack?",
-      "answer": "When attackers compromise software/hardware by infiltrating vendors or third-party components. Mitigate by vetting suppliers and monitoring for unusual behavior."
-    },
-    {
-      "question": "How do I secure my DNS settings?",
-      "answer": "Use reputable DNS providers like Cloudflare (1.1.1.1) or Google (8.8.8.8), enable DNS-over-HTTPS, and monitor for unauthorized changes to network settings."
-    },
-    {
-      "question": "What is a fileless malware?",
-      "answer": "Malicious code that operates in memory without installing files, making detection difficult. Prevent with behavior-based security tools and application whitelisting."
-    },
-    {
-      "question": "How can I protect against session hijacking?",
-      "answer": "Use HTTPS everywhere, log out of sessions when done, avoid public WiFi for sensitive activities, and watch for invalid certificate warnings."
-    },
-    {
-      "question": "What is a backdoor in cybersecurity?",
-      "answer": "Secret method to bypass authentication in systems. Can be malicious (planted by attackers) or intentional (for maintenance - should be secured/removed)."
-    },
-    {
-      "question": "How do I securely use payment apps?",
-      "answer": "Enable all security features, link to credit cards (not debit), use strong unique passwords, verify recipients carefully, and monitor transactions regularly."
-    },
-    {
-      "question": "What is a side-channel attack?",
-      "answer": "Extracting secrets by analyzing indirect effects like power consumption or timing rather than breaking encryption directly. Mitigate with constant-time algorithms."
-    },
-    {
-      "question": "How can I protect my home security cameras?",
-      "answer": "Change default passwords, enable encryption, keep firmware updated, segment on separate network, and disable remote access if not needed."
-    },
-    {
-      "question": "What is a cryptojacking attack?",
-      "answer": "Unauthorized use of your devices to mine cryptocurrency. Signs include slowed performance, overheating, and unexpected high processor usage."
-    },
-    {
-      "question": "How do I securely dispose of paper documents?",
-      "answer": "Use cross-cut shredders for sensitive materials, securely store documents awaiting shredding, and consider professional shredding services for bulk disposal."
-    },
-    {
-      "question": "What is a formjacking attack?",
-      "answer": "When attackers inject malicious code into website payment forms to steal credit card details. Protect by using reputable payment processors and checking for HTTPS."
-    },
-    {
-      "question": "How can I verify app permissions are safe?",
-      "answer": "Review requested permissions critically - does a flashlight app need contacts? Install only from official stores and check reviews for permission complaints."
-    },
-    {
-      "question": "What is a replay attack?",
-      "answer": "When attackers intercept and retransmit valid data to fraudulently repeat transactions. Prevent with session tokens, timestamps, and one-time codes."
-    },
-    {
-      "question": "How do I protect against fake apps?",
-      "answer": "Check developer names, download counts, reviews, and permissions. Only install from official app stores and beware of sideloading unless absolutely necessary."
-    },
-    {
-      "question": "What is a birthday attack?",
-      "answer": "Cryptographic attack exploiting probability theory to find hash collisions. Mitigate by using sufficiently large hash sizes and proper cryptographic implementations."
-    },
-    {
-      "question": "How can I secure my online meetings?",
-      "answer": "Use waiting rooms, meeting passwords, disable join-before-host, control screen sharing, lock meetings once started, and beware of phishing links disguised as invites."
-    },
-    {
-      "question": "What is a drive-by download?",
-      "answer": "Unintended download of malicious software just by visiting a compromised website. Prevent with updated browsers, script blockers, and avoiding shady sites."
-    },
-    {
-      "question": "How do I protect against fake antivirus popups?",
-      "answer": "Never call provided numbers or click popups. Close browser tabs showing warnings and run scans only with your installed, reputable security software."
-    },
-    {
-      "question": "What is a time-of-check to time-of-use attack?",
-      "answer": "Race condition where system state changes between permission check and action. Prevent with atomic operations and proper locking mechanisms."
-    },
-    {
-      "question": "How can I secure my router admin panel?",
-      "answer": "Change default credentials, disable remote administration, use strong encryption (WPA3), keep firmware updated, and disable unused services like UPnP when possible."
-    },
-    {
-      "question": "What is a bluejacking attack?",
-      "answer": "Sending unsolicited messages to Bluetooth-enabled devices. Prevent by disabling Bluetooth discoverability and rejecting unexpected file transfers."
-    },
-    {
-      "question": "How do I protect against fake job scams?",
-      "answer": "Research companies thoroughly, beware of high pay for little work, never pay for 'training', and verify all communications through official channels."
-    },
-    {
-      "question": "What is a SYN flood attack?",
-      "answer": "DDoS attack exploiting TCP handshake process. Mitigate with SYN cookies, rate limiting, and cloud-based DDoS protection services."
-    },
-    {
-      "question": "How can I securely use QR codes?",
-      "answer": "Preview URLs before opening (some scanners show this), beware of stickers placed over legitimate codes, and avoid scanning codes from untrusted sources."
-    },
-    {
-      "question": "What is a pivot attack?",
-      "answer": "When attackers move from compromised systems to others on the same network. Prevent with network segmentation and monitoring for lateral movement."
-    },
-    {
-      "question": "How do I protect against fake charities?",
-      "answer": "Verify charities through official databases, never donate via cash/gift cards, and beware high-pressure tactics especially after disasters."
-    },
-    {
-      "question": "What is a zero-click exploit?",
-      "answer": "Malware requiring no user interaction - just receiving a message can infect devices. Mitigate by keeping all software updated and using security-focused devices."
-    },
-    {
-      "question": "How can I secure my smart TV?",
-      "answer": "Change default settings, disable unnecessary connectivity features, keep firmware updated, use separate network if possible, and cover built-in cameras when unused."
-    },
-    {
-      "question": "What is a business email compromise?",
-      "answer": "Sophisticated phishing targeting organizations to trick employees into transferring money or sensitive data. Verify all payment/transfer requests via secondary channels."
-    },
-    {
-      "question": "How do I protect against fake invoices?",
-      "answer": "Implement approval processes for payments, verify all vendor banking changes through known contacts, and train staff to spot subtle email spoofing attempts."
-    },
-    {
-      "question": "What is a juice jacking attack?",
-      "answer": "Compromised public USB charging ports that install malware or steal data. Use AC outlets instead, bring portable batteries, or use charge-only USB cables."
-    },
-    {
-      "question": "How can I secure my vehicle's technology?",
-      "answer": "Update infotainment software, disable unnecessary connectivity, use strong PINs for keyless systems, and beware aftermarket devices that could introduce vulnerabilities."
+      "id": 50,
+      "question": "What is a security operations center (SOC)?",
+      "topic": "Enterprise Security",
+      "answer": "A team that monitors and responds to security incidents.",
+      "beginner_answer": "A company's cybersecurity team that watches for and stops attacks.",
+      "advanced_answer": "A centralized unit housing cybersecurity personnel, processes, and technology for continuous monitoring, threat detection, incident response, and security posture improvement."
     }
   ]
+}
+
   
