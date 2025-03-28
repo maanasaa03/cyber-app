@@ -24,25 +24,31 @@ const ChatbotScreen = () => {
   ]);
   const [inputText, setInputText] = useState('');
   const [isTyping, setIsTyping] = useState(false);
+  const [userLevel, setUserLevel] = useState('beginner'); // Add user level state
   const flatListRef = useRef(null);
   const navigation = useNavigation();
   const netInfo = useNetInfo();
 
+  // Load user level from storage when component mounts
   useEffect(() => {
-    const scrollToBottom = () => {
-      if (flatListRef.current && messages.length > 0) {
-        setTimeout(() => {
-          flatListRef.current?.scrollToEnd({ animated: true });
-        }, 100);
+    const loadUserLevel = async () => {
+      try {
+        const savedResults = await AsyncStorage.getItem('cyber_results');
+        if (savedResults) {
+          const results = JSON.parse(savedResults);
+          setUserLevel(results.userLevel || 'beginner');
+        }
+      } catch (error) {
+        console.error('Failed to load user level:', error);
       }
     };
-    scrollToBottom();
-  }, [messages]);
+    
+    loadUserLevel();
+  }, []);
 
   const handleSend = async () => {
     if (inputText.trim() === '' || isTyping) return;
 
-    // Check network connection
     if (!netInfo.isConnected) {
       setMessages(prev => [...prev, {
         id: Date.now() + 1,
@@ -52,28 +58,24 @@ const ChatbotScreen = () => {
       return;
     }
 
-    // Add user message
     const userMessage = { id: Date.now(), text: inputText, sender: 'user' };
     setMessages(prev => [...prev, userMessage]);
     setInputText('');
     setIsTyping(true);
 
     try {
-      console.log('Calling API:', `${BACKEND_URL}/api/query`);
-      
       const response = await fetch(`${BACKEND_URL}/api/query`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ text: inputText }),
+        body: JSON.stringify({ 
+          text: inputText,
+          user_level: userLevel // Include user level in the request
+        }),
       });
 
-      console.log('Response status:', response.status);
-      
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
+      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
 
       const data = await response.json();
       const botResponse = { id: Date.now() + 1, text: data.answer, sender: 'bot' };
@@ -107,13 +109,6 @@ const ChatbotScreen = () => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Icon name="arrow-back" size={24} color="#fff" />
-        </TouchableOpacity>
-        <Text style={styles.headerTitle}>Cyber Hygiene Assistant</Text>
-        <View style={{ width: 24 }} />
-      </View>
 
       <FlatList
         ref={flatListRef}
@@ -188,7 +183,7 @@ const styles = StyleSheet.create({
   },
   userContainer: {
     alignSelf: 'flex-end',
-    backgroundColor: '#2c3e50',
+    backgroundColor: '#9275D7',
     borderBottomRightRadius: 4,
   },
   botContainer: {
@@ -251,7 +246,7 @@ const styles = StyleSheet.create({
     width: 48,
     height: 48,
     borderRadius: 24,
-    backgroundColor: '#2c3e50',
+    backgroundColor: '#9C4DCC',
     justifyContent: 'center',
     alignItems: 'center',
   },

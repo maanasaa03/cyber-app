@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, View, Text, TouchableOpacity, ScrollView, Alert } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 const questions = [
   // Cyber Hygiene
@@ -151,6 +152,7 @@ export default function QuestionnaireScreen() {
   const [score, setScore] = useState<number | null>(null);
   const [suggestedTopics, setSuggestedTopics] = useState<string[]>([]);
   const [storedResults, setStoredResults] = useState<any>(null);
+  const [showTopicBreakdown, setShowTopicBreakdown] = useState(false);
   const [userLevel, setUserLevel] = useState<UserLevel>('beginner');
 
   // Load stored results and calculate user level on component mount
@@ -264,35 +266,57 @@ export default function QuestionnaireScreen() {
     }
   };
 
+  const getProgressColor = (percentage) => {
+    if (percentage >= 0.75) return '#4CAF50';  // Green
+    if (percentage >= 0.5) return '#FFC107';    // Yellow
+    return '#F44336';                           // Red
+  };
+
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      <Text style={styles.title}>Cybersecurity Questionnaire</Text>
 
-      {storedResults && (
-        <View style={styles.resultsContainer}>
-          <View style={[styles.levelBadge, { backgroundColor: getLevelColor() }]}>
-            <Text style={styles.levelBadgeText}>
-              {userLevel.charAt(0).toUpperCase() + userLevel.slice(1)}
-            </Text>
-          </View>
-          <Text style={styles.storedScoreText}>
-            Previous Score: {storedResults.score}/{storedResults.total} ({storedResults.percentage.toFixed(1)}%)
+{storedResults && (
+      <View style={styles.resultsContainer}>
+        <View style={[styles.levelBadge, { backgroundColor: getLevelColor() }]}>
+          <Text style={styles.levelBadgeText}>
+            {userLevel.charAt(0).toUpperCase() + userLevel.slice(1)}
           </Text>
-          {storedResults.topicDetails && (
-            <View style={styles.topicBreakdown}>
-              <Text style={styles.topicBreakdownTitle}>Topic Breakdown:</Text>
-              {Object.entries(storedResults.topicDetails).map(([topic, details]: [string, any]) => (
-                <View key={topic} style={styles.topicRow}>
-                  <Text style={styles.topicName}>{topic}:</Text>
-                  <Text style={styles.topicScore}>
-                    {details.correct}/{details.total} ({Math.round((details.correct / details.total) * 100)}%)
-                  </Text>
-                </View>
-              ))}
-            </View>
-          )}
         </View>
-      )}
+        <Text style={styles.storedScoreText}>
+          Previous Score: {storedResults.score}/{storedResults.total} ({storedResults.percentage.toFixed(1)}%)
+        </Text>
+
+        {/* Show More button with correct Material icon names */}
+        <TouchableOpacity 
+          onPress={() => setShowTopicBreakdown(!showTopicBreakdown)}
+          style={styles.showMoreButton}
+        >
+          <Text style={styles.showMoreText}>
+            {showTopicBreakdown ? 'Show Less' : 'Show More'}
+          </Text>
+          <Icon 
+            name={showTopicBreakdown ? 'keyboard-arrow-up' : 'keyboard-arrow-down'} 
+            size={20}  // Slightly larger for better visibility
+            color="#666" 
+          />
+        </TouchableOpacity>
+
+        {/* Conditionally render topic breakdown */}
+        {showTopicBreakdown && storedResults.topicDetails && (
+          <View style={styles.topicBreakdown}>
+            <Text style={styles.topicBreakdownTitle}>Topic Breakdown:</Text>
+            {Object.entries(storedResults.topicDetails).map(([topic, details]: [string, any]) => (
+              <View key={topic} style={styles.topicRow}>
+                <Text style={styles.topicName}>{topic}:</Text>
+                <Text style={styles.topicScore}>
+                  {details.correct}/{details.total} ({Math.round((details.correct / details.total) * 100)}%)
+                </Text>
+              </View>
+            ))}
+          </View>
+        )}
+      </View>
+    )}
 
       {questions.map((question, index) => (
         <View key={index} style={styles.questionContainer}>
@@ -323,6 +347,7 @@ const styles = StyleSheet.create({
   container: {
     padding: 20,
     paddingBottom: 40,
+    backgroundColor:'#BCA4F5'
   },
   title: {
     fontSize: 24,
@@ -413,7 +438,7 @@ const styles = StyleSheet.create({
     color: '#212529',
   },
   submitButton: {
-    backgroundColor: '#228be6',
+    backgroundColor: '#9C4DCC',
     padding: 15,
     borderRadius: 8,
     marginTop: 20,
@@ -424,5 +449,18 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
   },
+  showMoreButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 8,
+    marginTop: 8,
+  },
+  showMoreText: {
+    color: '#666',
+    marginRight: 4,
+    fontSize: 14,
+  }
 });
+  
   

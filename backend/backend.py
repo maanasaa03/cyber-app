@@ -100,6 +100,17 @@ async def startup_event():
 
 @app.post("/api/query")
 async def handle_query(query: UserQuery):
+    if query.text.lower().strip() in [
+        "what is my level", 
+        "my current level", 
+        "level"
+    ]:
+        return {
+            "answer": f"Your current cybersecurity level is: {query.user_level}",
+            "topic": "user_level",
+            "similarity": 1.0  # Guaranteed match
+        }
+        
     try:
         embeddings_data = load_or_create_embeddings()
         if not embeddings_data:

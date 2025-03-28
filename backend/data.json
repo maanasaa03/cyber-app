@@ -399,6 +399,406 @@
       "answer": "A team that monitors and responds to security incidents.",
       "beginner_answer": "A company's cybersecurity team that watches for and stops attacks.",
       "advanced_answer": "A centralized unit housing cybersecurity personnel, processes, and technology for continuous monitoring, threat detection, incident response, and security posture improvement."
+    },
+    {
+      "id": 51,
+      "question": "What is the purpose of a security audit?",
+      "topic": "Security Management",
+      "answer": "To evaluate an organization's security policies and controls.",
+      "beginner_answer": "It checks if a company's security rules are working properly.",
+      "advanced_answer": "A systematic evaluation of security controls against established criteria to verify compliance, identify vulnerabilities, and assess risk posture."
+    },
+    {
+      "id": 52,
+      "question": "Why should you avoid using administrator accounts for daily tasks?",
+      "topic": "Access Control",
+      "answer": "To limit potential damage from malware or mistakes.",
+      "beginner_answer": "So if you accidentally click something bad, it can't do as much harm.",
+      "advanced_answer": "Following the principle of least privilege reduces attack surface by preventing privilege escalation and limiting blast radius of compromised accounts."
+    },
+    {
+      "id": 53,
+      "question": "What is a DDoS attack?",
+      "topic": "Threats",
+      "answer": "Overwhelming a system with traffic from multiple sources.",
+      "beginner_answer": "When hackers flood a website with fake traffic to crash it.",
+      "advanced_answer": "A distributed denial-of-service attack utilizing botnets to exhaust target resources (bandwidth, CPU, memory) making services unavailable to legitimate users."
+    },
+    {
+      "id": 54,
+      "question": "How can you protect against SQL injection attacks?",
+      "topic": "Web Security",
+      "answer": "Use parameterized queries and input validation.",
+      "beginner_answer": "Make sure your website forms check data properly before using it.",
+      "advanced_answer": "Implement prepared statements with parameter binding, employ strict input validation using allow lists, and leverage ORMs that abstract direct SQL construction."
+    },
+    {
+      "id": 55,
+      "question": "What is the difference between symmetric and asymmetric encryption?",
+      "topic": "Cryptography",
+      "answer": "Symmetric uses one key, asymmetric uses a public/private key pair.",
+      "beginner_answer": "Symmetric is like one key for lock/unlock, asymmetric is like a mailbox where anyone can put mail in but only you can take it out.",
+      "advanced_answer": "Symmetric (AES) offers faster bulk encryption with key distribution challenges, while asymmetric (RSA/ECC) enables secure key exchange and digital signatures through mathematically-linked key pairs."
+    },
+    {
+      "id": 56,
+      "question": "Why should you disable autofill in browsers?",
+      "topic": "Browser Security",
+      "answer": "To prevent sensitive data from being automatically entered on malicious sites.",
+      "beginner_answer": "So your passwords don't automatically fill in on fake websites.",
+      "advanced_answer": "Mitigates formjacking attacks where compromised sites harvest autofilled credentials through DOM manipulation and hidden form fields."
+    },
+    {
+      "id": 57,
+      "question": "What is a CSRF attack?",
+      "topic": "Web Security",
+      "answer": "Cross-Site Request Forgery that tricks users into executing unwanted actions.",
+      "beginner_answer": "When a bad website makes your browser do things on other sites where you're logged in.",
+      "advanced_answer": "An attack exploiting web session cookies to execute state-changing requests (like fund transfers) by leveraging the browser's automatic credential inclusion on same-origin requests."
+    },
+    {
+      "id": 58,
+      "question": "How can you securely configure a wireless router?",
+      "topic": "Network Security",
+      "answer": "Change default credentials, enable WPA3, disable WPS, and update firmware.",
+      "beginner_answer": "Use strong wifi password, turn off easy-connect features, and keep it updated.",
+      "advanced_answer": "Implement WPA3-Enterprise with 802.1X authentication, disable SSID broadcasting, enable MAC filtering, and segment IoT devices on a separate VLAN."
+    },
+    {
+      "id": 59,
+      "question": "What is the purpose of a security information and event management (SIEM) system?",
+      "topic": "Security Monitoring",
+      "answer": "To collect and analyze security data from across an organization.",
+      "beginner_answer": "It's like a security alarm system that watches all computer activity for problems.",
+      "advanced_answer": "A centralized log management and correlation system applying analytics to detect anomalies, support incident response, and demonstrate compliance through comprehensive monitoring."
+    },
+    {
+      "id": 60,
+      "question": "Why should you be careful with QR codes?",
+      "topic": "Mobile Security",
+      "answer": "They can direct to malicious websites without showing the URL.",
+      "beginner_answer": "You can't see where they'll take you until it's too late.",
+      "advanced_answer": "QR codes obscure destination URLs enabling phishing attacks, and may trigger vulnerable URI handlers in mobile apps leading to exploitation."
+    },
+    {
+      "id": 61,
+      "question": "What is a supply chain attack?",
+      "topic": "Threats",
+      "answer": "Compromising a product through its vendors or dependencies.",
+      "beginner_answer": "Hacking a company by breaking into their software suppliers first.",
+      "advanced_answer": "An attack vector targeting less-secure elements in the software supply chain (libraries, build tools, vendors) to compromise downstream consumers like the SolarWinds incident."
+    },
+    {
+      "id": 62,
+      "question": "How can you protect against brute force attacks?",
+      "topic": "Authentication",
+      "answer": "Implement account lockouts and rate limiting after failed attempts.",
+      "beginner_answer": "Make accounts temporarily lock after too many wrong password guesses.",
+      "advanced_answer": "Employ progressive delays, CAPTCHAs after threshold attempts, and implement password spraying detection rather than strict lockouts that enable denial-of-service."
+    },
+    {
+      "id": 63,
+      "question": "What is the purpose of a security policy?",
+      "topic": "Security Management",
+      "answer": "To define an organization's approach to information security.",
+      "beginner_answer": "It's a company's rulebook for keeping data safe.",
+      "advanced_answer": "A formal document establishing management intent, roles/responsibilities, and controls to maintain confidentiality, integrity and availability of information assets."
+    },
+    {
+      "id": 64,
+      "question": "Why should you avoid saving passwords in browsers?",
+      "topic": "Password Security",
+      "answer": "They're less secure than dedicated password managers and vulnerable to theft.",
+      "beginner_answer": "Browser password storage isn't as safe as real password managers.",
+      "advanced_answer": "Browser password vaults lack robust encryption, are vulnerable to session hijacking, and don't offer advanced features like breach monitoring or secure sharing."
+    },
+    {
+      "id": 65,
+      "question": "What is a root certificate?",
+      "topic": "PKI",
+      "answer": "A trusted certificate that signs and validates other certificates.",
+      "beginner_answer": "The master certificate that makes all other security certificates trustworthy.",
+      "advanced_answer": "The top-most certificate in a PKI hierarchy whose private key signs subordinate CA certificates, establishing the chain of trust for TLS and digital signatures."
+    },
+    {
+      "id": 66,
+      "question": "How can you detect a compromised account?",
+      "topic": "Threat Detection",
+      "answer": "Monitor for unusual login locations or unfamiliar activity.",
+      "beginner_answer": "Watch for strange login attempts or things you didn't do in your account.",
+      "advanced_answer": "Implement UEBA solutions analyzing login geovelocity, device fingerprints, and session anomalies while monitoring for IOCs like data exfiltration patterns."
+    },
+    {
+      "id": 67,
+      "question": "What is the purpose of a bastion host?",
+      "topic": "Network Security",
+      "answer": "A hardened server providing controlled access to a private network.",
+      "beginner_answer": "A special heavily-protected computer that's the only way into a secure network.",
+      "advanced_answer": "A jump server with enhanced logging and multi-factor authentication that serves as the single controlled entry point to segmented network environments following zero-trust principles."
+    },
+    {
+      "id": 68,
+      "question": "Why should you sanitize user inputs?",
+      "topic": "Application Security",
+      "answer": "To prevent injection attacks like XSS and SQLi.",
+      "beginner_answer": "To clean up anything users type in before your website uses it.",
+      "advanced_answer": "Proper input validation and output encoding prevents interpretation of user-supplied data as executable code across various contexts (HTML, SQL, OS commands)."
+    },
+    {
+      "id": 69,
+      "question": "What is the difference between IDS and IPS?",
+      "topic": "Network Security",
+      "answer": "IDS detects threats while IPS can block them automatically.",
+      "beginner_answer": "One watches for attacks, the other can stop attacks in progress.",
+      "advanced_answer": "Intrusion Detection Systems (IDS) perform monitoring and alerting while Intrusion Prevention Systems (IPS) can actively drop packets or reset connections to block identified threats."
+    },
+    {
+      "id": 70,
+      "question": "How can you protect against session hijacking?",
+      "topic": "Web Security",
+      "answer": "Use HTTPS, secure cookies, and regenerate session IDs after login.",
+      "beginner_answer": "Make sure websites use encryption and don't stay logged in forever.",
+      "advanced_answer": "Implement strict transport security (HSTS), set Secure/HttpOnly cookie flags, use short session timeouts, and bind sessions to client fingerprints."
+    },
+    {
+      "id": 71,
+      "question": "What is a watering hole attack?",
+      "topic": "Threats",
+      "answer": "Infecting websites frequented by target users.",
+      "beginner_answer": "Hacking websites that specific people visit to infect their computers.",
+      "advanced_answer": "A targeted attack compromising sites likely to be visited by a particular group (like an industry forum) to distribute malware through exploit kits."
+    },
+    {
+      "id": 72,
+      "question": "Why should you segment your network?",
+      "topic": "Network Security",
+      "answer": "To limit lateral movement if a breach occurs.",
+      "beginner_answer": "So if hackers get into one part, they can't easily reach everything else.",
+      "advanced_answer": "Network segmentation using VLANs or microsegmentation contains breaches by enforcing east-west traffic controls between zones based on least privilege."
+    },
+    {
+      "id": 73,
+      "question": "What is the principle of defense in depth?",
+      "topic": "Security Strategy",
+      "answer": "Using multiple overlapping security controls.",
+      "beginner_answer": "Having many layers of security so if one fails, others still protect you.",
+      "advanced_answer": "A security architecture employing concentric protection layers (physical, network, host, application, data) to provide redundancy against control failures."
+    },
+    {
+      "id": 74,
+      "question": "How can you securely configure a database?",
+      "topic": "Data Security",
+      "answer": "Use strong authentication, limit permissions, and encrypt sensitive fields.",
+      "beginner_answer": "Protect with good passwords, only give needed access, and scramble important data.",
+      "advanced_answer": "Implement role-based access control, enable TDE (Transparent Data Encryption), disable default accounts, and apply the principle of least privilege to schema permissions."
+    },
+    {
+      "id": 75,
+      "question": "What is a security misconfiguration?",
+      "topic": "Vulnerabilities",
+      "answer": "Insecure default settings or incomplete configurations.",
+      "beginner_answer": "When security settings aren't properly set up, leaving holes for hackers.",
+      "advanced_answer": "A common vulnerability resulting from exposed services, default credentials, verbose error messages, or unnecessary features left enabled in systems."
+    },
+    {
+      "id": 76,
+      "question": "Why should you verify checksums when downloading software?",
+      "topic": "System Security",
+      "answer": "To ensure files haven't been tampered with during transfer.",
+      "beginner_answer": "To check the file wasn't changed or corrupted on its way to you.",
+      "advanced_answer": "Validating cryptographic hashes (SHA-256) provides integrity assurance that binaries match the publisher's original and weren't modified in transit."
+    },
+    {
+      "id": 77,
+      "question": "What is the purpose of a non-disclosure agreement (NDA) in security?",
+      "topic": "Security Management",
+      "answer": "To legally protect sensitive information shared with employees or partners.",
+      "beginner_answer": "A contract that keeps people from sharing company secrets.",
+      "advanced_answer": "A legal instrument establishing confidentiality obligations for personnel handling sensitive data, with remedies for breaches supporting incident response and litigation."
+    },
+    {
+      "id": 78,
+      "question": "How can you protect against insider threats?",
+      "topic": "Threat Protection",
+      "answer": "Implement least privilege, monitor for anomalies, and conduct background checks.",
+      "beginner_answer": "Give minimal access needed, watch for strange behavior, and vet employees.",
+      "advanced_answer": "Deploy UEBA solutions, enforce separation of duties, implement privileged access management, and maintain robust offboarding procedures."
+    },
+    {
+      "id": 79,
+      "question": "What is a security token service (STS)?",
+      "topic": "Authentication",
+      "answer": "A system that issues security tokens for authentication.",
+      "beginner_answer": "A service that provides special login keys for secure access.",
+      "advanced_answer": "A component in federated identity systems that issues signed security assertions (like SAML tokens) after authenticating users to enable single sign-on across domains."
+    },
+    {
+      "id": 80,
+      "question": "Why should you avoid using deprecated cryptographic algorithms?",
+      "topic": "Cryptography",
+      "answer": "They may have known vulnerabilities or be breakable with modern computing power.",
+      "beginner_answer": "Older encryption methods can often be cracked by today's computers.",
+      "advanced_answer": "Algorithms like MD5, SHA-1, and DES have demonstrated cryptographic weaknesses making them vulnerable to collision attacks or brute force decryption."
+    },
+    {
+      "id": 81,
+      "question": "What is a security control framework?",
+      "topic": "Security Management",
+      "answer": "A structured set of security requirements and best practices.",
+      "beginner_answer": "A checklist of security rules that organizations can follow.",
+      "advanced_answer": "Systematized security requirements like NIST CSF, ISO 27001, or CIS Controls that provide comprehensive guidance for implementing defense-in-depth."
+    },
+    {
+      "id": 82,
+      "question": "How can you protect against DNS spoofing?",
+      "topic": "Network Security",
+      "answer": "Use DNSSEC and validate DNS responses.",
+      "beginner_answer": "Enable special DNS security features that verify website addresses.",
+      "advanced_answer": "Implement DNS-over-HTTPS (DoH) or DNS-over-TLS (DoT) to encrypt queries, and deploy DNSSEC to authenticate DNS record authenticity."
+    },
+    {
+      "id": 83,
+      "question": "What is the purpose of a virtual private cloud (VPC)?",
+      "topic": "Cloud Security",
+      "answer": "To isolate cloud resources in a logically segmented network.",
+      "beginner_answer": "A private section of the cloud where you control who can access what.",
+      "advanced_answer": "A software-defined network boundary in cloud environments enabling segmentation, private IP addressing, and granular security group policies for IaaS resources."
+    },
+    {
+      "id": 84,
+      "question": "Why should you disable unnecessary services on servers?",
+      "topic": "System Hardening",
+      "answer": "To reduce attack surface and potential vulnerabilities.",
+      "beginner_answer": "Fewer active services means fewer ways hackers can break in.",
+      "advanced_answer": "Following the principle of minimal functionality eliminates potential attack vectors by disabling unused ports, protocols, and daemons that could be exploited."
+    },
+    {
+      "id": 85,
+      "question": "What is a security orchestration, automation and response (SOAR) platform?",
+      "topic": "Security Operations",
+      "answer": "A system that automates and coordinates security incident response.",
+      "beginner_answer": "A tool that helps security teams automatically handle threats.",
+      "advanced_answer": "A solution combining incident management, workflow automation, and threat intelligence integration to streamline SOC operations and response playbooks."
+    },
+    {
+      "id": 86,
+      "question": "How can you protect against physical security threats?",
+      "topic": "Physical Security",
+      "answer": "Control facility access, use surveillance, and secure devices.",
+      "beginner_answer": "Lock doors, use cameras, and don't leave computers unattended.",
+      "advanced_answer": "Implement layered physical controls including biometric access systems, asset tracking, tamper-evident hardware, and clean desk policies."
+    },
+    {
+      "id": 87,
+      "question": "What is a security compliance standard?",
+      "topic": "Compliance",
+      "answer": "A set of requirements for meeting regulatory or industry security rules.",
+      "beginner_answer": "Official security rules that certain businesses have to follow.",
+      "advanced_answer": "Mandatory frameworks like PCI DSS, HIPAA, or GDPR that specify technical and organizational controls for protecting sensitive data in regulated industries."
+    },
+    {
+      "id": 88,
+      "question": "Why should you conduct penetration testing?",
+      "topic": "Security Testing",
+      "answer": "To identify vulnerabilities by simulating real attacks.",
+      "beginner_answer": "To safely hack your own systems and find weaknesses before criminals do.",
+      "advanced_answer": "Authorized ethical hacking exercises that validate security controls by emulating adversary TTPs (Tactics, Techniques and Procedures) to uncover exploitable flaws."
+    },
+    {
+      "id": 89,
+      "question": "What is the purpose of a disaster recovery plan?",
+      "topic": "Business Continuity",
+      "answer": "To restore critical systems after a major incident.",
+      "beginner_answer": "A playbook for getting systems back online after emergencies.",
+      "advanced_answer": "A documented process defining RTOs (Recovery Time Objectives) and RPOs (Recovery Point Objectives) to resume operations following cyber incidents or outages."
+    },
+    {
+      "id": 90,
+      "question": "How can you protect against API security threats?",
+      "topic": "Application Security",
+      "answer": "Implement authentication, rate limiting, and input validation.",
+      "beginner_answer": "Secure APIs with good access controls and check all incoming data.",
+      "advanced_answer": "Employ OAuth 2.0 with PKCE, validate JWT tokens strictly, implement request signing, and enforce schema validation for all API payloads."
+    },
+    {
+      "id": 91,
+      "question": "What is a security awareness training program?",
+      "topic": "Security Culture",
+      "answer": "Education to help employees recognize and avoid security risks.",
+      "beginner_answer": "Teaching staff how to spot scams and follow security rules.",
+      "advanced_answer": "Structured curriculum covering phishing recognition, secure remote work practices, incident reporting procedures, and role-specific security responsibilities."
+    },
+    {
+      "id": 92,
+      "question": "Why should you monitor third-party vendor security?",
+      "topic": "Vendor Risk",
+      "answer": "Their vulnerabilities can become your vulnerabilities.",
+      "beginner_answer": "Because hackers can break into your systems through your suppliers.",
+      "advanced_answer": "Continuous vendor risk assessment is critical as supply chain compromises can bypass perimeter defenses, requiring rigorous third-party security reviews."
+    },
+    {
+      "id": 93,
+      "question": "What is the purpose of a red team exercise?",
+      "topic": "Security Testing",
+      "answer": "To test defenses by simulating advanced adversary tactics.",
+      "beginner_answer": "A realistic attack simulation to find security weaknesses.",
+      "advanced_answer": "A full-scope adversarial simulation employing ATT&CK framework techniques to evaluate detection and response capabilities against advanced persistent threats."
+    },
+    {
+      "id": 94,
+      "question": "How can you secure a DevOps pipeline?",
+      "topic": "DevSecOps",
+      "answer": "Implement SAST, DAST, and artifact signing in CI/CD workflows.",
+      "beginner_answer": "Add security checks and scans to your automated build process.",
+      "advanced_answer": "Integrate SCA tools, enforce immutable artifacts with Sigstore cosign, implement infrastructure-as-code scanning, and require approval gates for production."
+    },
+    {
+      "id": 95,
+      "question": "What is the principle of fail securely?",
+      "topic": "Secure Design",
+      "answer": "Systems should default to a secure state when failures occur.",
+      "beginner_answer": "If something breaks, it should lock down rather than stay open.",
+      "advanced_answer": "A design philosophy where systems deny access by default during failures rather than failing open, preventing security control bypass during exceptions."
+    },
+    {
+      "id": 96,
+      "question": "Why should you conduct threat modeling?",
+      "topic": "Risk Management",
+      "answer": "To identify potential threats and appropriate mitigations early.",
+      "beginner_answer": "To think like an attacker and fix weaknesses before building systems.",
+      "advanced_answer": "A structured approach (like STRIDE) analyzing system designs for potential threats, enabling cost-effective security controls during development."
+    },
+    {
+      "id": 97,
+      "question": "What is a security operations playbook?",
+      "topic": "Incident Response",
+      "answer": "Documented procedures for handling security incidents.",
+      "beginner_answer": "Step-by-step instructions for what to do during cyber attacks.",
+      "advanced_answer": "Standardized response procedures for common incident types ensuring consistent containment, eradication and recovery following NIST SP 800-61 guidelines."
+    },
+    {
+      "id": 98,
+      "question": "How can you protect against memory corruption attacks?",
+      "topic": "System Security",
+      "answer": "Use memory-safe languages and enable exploit mitigations.",
+      "beginner_answer": "Write secure code and turn on protective features in software.",
+      "advanced_answer": "Implement ASLR, DEP, stack canaries, and control flow integrity while preferring Rust or managed languages over C/C++ for memory-sensitive components."
+    },
+    {
+      "id": 99,
+      "question": "What is the purpose of a bug bounty program?",
+      "topic": "Vulnerability Management",
+      "answer": "To incentivize ethical hackers to report vulnerabilities responsibly.",
+      "beginner_answer": "Paying rewards to people who find and report security flaws.",
+      "advanced_answer": "A crowdsourced security initiative that engages external researchers to identify vulnerabilities through authorized testing with defined scope and rewards."
+    },
+    {
+      "id": 100,
+      "question": "Why should you implement data classification?",
+      "topic": "Data Protection",
+      "answer": "To apply appropriate security controls based on data sensitivity.",
+      "beginner_answer": "So you know which files need the strongest protection.",
+      "advanced_answer": "A systematic approach tagging data (public, internal, confidential, restricted) enabling risk-based application of encryption, access controls and retention policies."
     }
   ]
 }
