@@ -16,7 +16,7 @@ import Config from 'react-native-config';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNetInfo } from '@react-native-community/netinfo';
 
-const BACKEND_URL = 'http://192.168.0.105:8000';
+const BACKEND_URL = 'http://10.123.123.205:8000';
 
 const ChatbotScreen = () => {
   const [messages, setMessages] = useState([

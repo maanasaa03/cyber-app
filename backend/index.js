@@ -191,7 +191,7 @@ app.post('/analyze', async (req, res) => {
       if (domainAge) {
         const ageInYears = (new Date() - new Date(domainAge)) / (1000 * 60 * 60 * 24 * 365);
         checklist.domainAge = ageInYears >= 1 ? `✅ Established (${ageInYears.toFixed(1)} years old)` : "⚠️ New domain (<1 year old)";
-        if (ageInYears < 1) securityScore -= 20;
+        if (ageInYears < 2) securityScore -= 20;
       } else {
         checklist.domainAge = "⚠️ Domain age unknown";
       }
@@ -223,9 +223,8 @@ app.post('/analyze', async (req, res) => {
       ([key, value]) => `🔹 ${key}: ${value}`
     );
 
-    // ✅ FIX: Ensure array is **never undefined**
     res.json({
-      summaryChecklist: summaryChecklistArray || [], // 🔥 Fix applied here
+      summaryChecklist: summaryChecklistArray || [], 
       securityScore,
       detailedReport: aiAnalysis || "No analysis available."
     });

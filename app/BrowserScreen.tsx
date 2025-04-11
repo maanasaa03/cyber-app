@@ -10,7 +10,7 @@ const BrowserScreen = () => {
   const [checklist, setChecklist] = useState<string[]>([]);
   const [fullAnalysis, setFullAnalysis] = useState<string | null>(null);
 
-  const BACKEND_URL = "http://192.168.0.103:5000";
+  const BACKEND_URL = "http://10.123.123.205:5000";
 
   const handleGo = async () => {
     const formattedUrl = url.startsWith("http") ? url : `https://${url}`;

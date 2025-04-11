@@ -4,145 +4,245 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 const questions = [
-  // Cyber Hygiene
+  // Cyber Hygiene (3 questions)
   {
-    question: "Which of these is a key aspect of cyber hygiene?",
-    options: ["Using strong passwords", "Keeping devices always unlocked", "Ignoring security updates", "Connecting to any available Wi-Fi"],
-    answer: "Using strong passwords",
-    topic: "Cyber Hygiene",
+    question: "What's the minimum recommended length for a strong password?",
+    options: ["6 characters", "8 characters", "12 characters", "4 characters"],
+    answer: "12 characters",
+    topic: "Cyber Hygiene"
   },
   {
-    question: "What is the benefit of regular software updates?",
-    options: ["Improves appearance", "Fixes security vulnerabilities", "Makes device slower", "Increases battery usage"],
-    answer: "Fixes security vulnerabilities",
-    topic: "Cyber Hygiene",
+    question: "Why is it important to install software updates promptly?",
+    options: [
+      "They only add new features",
+      "They fix security vulnerabilities",
+      "They make your device slower",
+      "They change your settings automatically"
+    ],
+    answer: "They fix security vulnerabilities",
+    topic: "Cyber Hygiene"
   },
   {
-    question: "Why should you avoid using the same password for multiple accounts?",
-    options: ["Easier to remember", "Increases security risk", "Improves account performance", "Required by law"],
-    answer: "Increases security risk",
-    topic: "Cyber Hygiene",
-  },
-
-  // Public Wi-Fi Safety
-  {
-    question: "What is the safest way to access personal data on public Wi-Fi?",
-    options: ["Use HTTPS websites", "Turn off device security", "Connect to open networks", "Disable password protection"],
-    answer: "Use HTTPS websites",
-    topic: "Public Wi-Fi Safety",
-  },
-  {
-    question: "Which tool can protect your data on public Wi-Fi?",
-    options: ["VPN", "Bluetooth", "Cookies", "Data Saver Mode"],
-    answer: "VPN",
-    topic: "Public Wi-Fi Safety",
-  },
-  {
-    question: "When using public Wi-Fi, which of these should you avoid?",
-    options: ["Accessing banking apps", "Using HTTPS websites", "Updating your antivirus", "Disabling auto-connect"],
-    answer: "Accessing banking apps",
-    topic: "Public Wi-Fi Safety",
+    question: "What's the risk of using the same password across multiple accounts?",
+    options: [
+      "No risk - it's convenient",
+      "If one account is hacked, all become vulnerable",
+      "It makes passwords easier to remember",
+      "It improves login speed"
+    ],
+    answer: "If one account is hacked, all become vulnerable",
+    topic: "Cyber Hygiene"
   },
 
-  // Phishing
+  // Public Wi-Fi Safety (3 questions)
   {
-    question: "Which of the following is a common sign of a phishing email?",
-    options: ["Personalized greeting", "Misspellings and urgent tone", "Email from known address", "Contains only text"],
-    answer: "Misspellings and urgent tone",
-    topic: "Phishing",
+    question: "What's the safest action when using public Wi-Fi at an airport?",
+    options: [
+      "Online banking without protection",
+      "Checking email via VPN",
+      "Shopping on unfamiliar websites",
+      "Turning off your firewall"
+    ],
+    answer: "Checking email via VPN",
+    topic: "Public Wi-Fi Safety"
   },
   {
-    question: "What should you do if you suspect an email is phishing?",
-    options: ["Reply to confirm details", "Click the link to check", "Report it as spam", "Ignore and keep it"],
-    answer: "Report it as spam",
-    topic: "Phishing",
+    question: "Why should you disable auto-connect to Wi-Fi networks?",
+    options: [
+      "To save battery life",
+      "To prevent automatically connecting to malicious hotspots",
+      "To make your device discoverable",
+      "It's required by law"
+    ],
+    answer: "To prevent automatically connecting to malicious hotspots",
+    topic: "Public Wi-Fi Safety"
   },
   {
-    question: "Which action is most likely to protect you from phishing attacks?",
-    options: ["Clicking unfamiliar links", "Ignoring email subjects", "Enabling multi-factor authentication", "Using common passwords"],
-    answer: "Enabling multi-factor authentication",
-    topic: "Phishing",
+    question: "What does a VPN protect when using public Wi-Fi?",
+    options: [
+      "Only your email password",
+      "Just your browsing history",
+      "All your internet traffic",
+      "Nothing - it's just for accessing blocked sites"
+    ],
+    answer: "All your internet traffic",
+    topic: "Public Wi-Fi Safety"
   },
 
-  // Secure Browsing
+  // Phishing (3 questions)
   {
-    question: "Which of these indicates a secure website?",
-    options: ["HTTP in the URL", "HTTPS and a lock icon", "No address bar", "Red background"],
-    answer: "HTTPS and a lock icon",
-    topic: "Secure Browsing",
+    question: "Which element is MOST likely to indicate a phishing email?",
+    options: [
+      "Professional logo",
+      "Urgent request for personal information",
+      "Proper grammar and spelling",
+      "Familiar sender name"
+    ],
+    answer: "Urgent request for personal information",
+    topic: "Phishing"
   },
   {
-    question: "Why is it important to log out of websites on public computers?",
-    options: ["Saves time", "Prevents unauthorized access", "Boosts computer speed", "Improves internet connection"],
-    answer: "Prevents unauthorized access",
-    topic: "Secure Browsing",
+    question: "What should you do with a suspicious email from your 'bank'?",
+    options: [
+      "Click 'Unsubscribe'",
+      "Forward to your bank's fraud department",
+      "Reply with your account number to verify",
+      "Open attachments to check authenticity"
+    ],
+    answer: "Forward to your bank's fraud department",
+    topic: "Phishing"
   },
   {
-    question: "What should you do if your browser warns you about a suspicious website?",
-    options: ["Ignore the warning", "Close the browser", "Proceed with caution", "Leave the site immediately"],
+    question: "How does multi-factor authentication help prevent phishing success?",
+    options: [
+      "It makes passwords unnecessary",
+      "Attackers can't bypass the second factor",
+      "It encrypts all your emails",
+      "It automatically detects fake websites"
+    ],
+    answer: "Attackers can't bypass the second factor",
+    topic: "Phishing"
+  },
+
+  // Secure Browsing (3 questions)
+  {
+    question: "What does the padlock icon in your browser guarantee?",
+    options: [
+      "The website is completely safe",
+      "Your connection is encrypted",
+      "The company is legitimate",
+      "No malware exists on the site"
+    ],
+    answer: "Your connection is encrypted",
+    topic: "Secure Browsing"
+  },
+  {
+    question: "Why should you clear browser cache on shared computers?",
+    options: [
+      "To make the computer faster",
+      "To remove saved login credentials",
+      "To update the browser",
+      "To see newer website designs"
+    ],
+    answer: "To remove saved login credentials",
+    topic: "Secure Browsing"
+  },
+  {
+    question: "What's the safest response to a browser security warning?",
+    options: [
+      "Proceed anyway - warnings are usually false",
+      "Take a screenshot and continue",
+      "Leave the site immediately",
+      "Disable your antivirus temporarily"
+    ],
     answer: "Leave the site immediately",
-    topic: "Secure Browsing",
+    topic: "Secure Browsing"
   },
 
-  // Authentication and Access Control
+  // Authentication (3 questions)
   {
-    question: "What does multi-factor authentication (MFA) provide?",
-    options: ["Improved battery life", "Stronger account security", "Faster access", "Reduced security"],
-    answer: "Stronger account security",
-    topic: "Authentication and Access Control",
+    question: "Which authentication method is MOST secure?",
+    options: [
+      "Single password",
+      "Password + security questions",
+      "Password + SMS code",
+      "Password + biometric scan"
+    ],
+    answer: "Password + biometric scan",
+    topic: "Authentication"
   },
   {
-    question: "Which is considered a weak password?",
-    options: ["123456", "Pass@123", "SecureKey!45", "MyDog@Home4"],
-    answer: "123456",
-    topic: "Authentication and Access Control",
+    question: "What makes 'Winter2023!' a better password than 'password123'?",
+    options: [
+      "It's longer and more complex",
+      "It contains a season reference",
+      "It has a capital letter",
+      "It's easier to remember"
+    ],
+    answer: "It's longer and more complex",
+    topic: "Authentication"
   },
   {
-    question: "What should you do if you think someone has accessed your account without permission?",
-    options: ["Ignore it", "Change your password immediately", "Delete the account", "Report it to friends"],
-    answer: "Change your password immediately",
-    topic: "Authentication and Access Control",
-  },
-
-  // Device Security and Encryption
-  {
-    question: "Why is it important to enable encryption on your device?",
-    options: ["Improves device speed", "Prevents unauthorized access to data", "Saves battery life", "Increases storage"],
-    answer: "Prevents unauthorized access to data",
-    topic: "Device Security and Encryption",
-  },
-  {
-    question: "What is a common way to protect mobile devices from theft?",
-    options: ["Leaving it unlocked", "Enabling screen lock", "Sharing password", "Turning off GPS"],
-    answer: "Enabling screen lock",
-    topic: "Device Security and Encryption",
-  },
-  {
-    question: "What should you do before disposing of an old device?",
-    options: ["Clear storage", "Reset to factory settings", "Delete a few files", "Nothing"],
-    answer: "Reset to factory settings",
-    topic: "Device Security and Encryption",
+    question: "Why should you change passwords after a data breach?",
+    options: [
+      "Breaches never expose passwords",
+      "Your password might be compromised",
+      "It's required by all websites",
+      "To get free credit monitoring"
+    ],
+    answer: "Your password might be compromised",
+    topic: "Authentication"
   },
 
-  // Data Privacy
+  // Device Security (3 questions)
   {
-    question: "What information should you avoid sharing on social media?",
-    options: ["Vacation plans", "Favorite movie", "Public news", "Hobby"],
-    answer: "Vacation plans",
-    topic: "Data Privacy",
+    question: "What's the purpose of device encryption?",
+    options: [
+      "Make deleted files unrecoverable",
+      "Protect data if device is stolen",
+      "Improve touchscreen sensitivity",
+      "Increase storage capacity"
+    ],
+    answer: "Protect data if device is stolen",
+    topic: "Device Security"
   },
   {
-    question: "Which is an example of personal data you should protect?",
-    options: ["Name of favorite pet", "Credit card details", "Favorite color", "Nickname"],
-    answer: "Credit card details",
-    topic: "Data Privacy",
+    question: "Which screen lock method is MOST secure?",
+    options: [
+      "4-digit PIN",
+      "Swipe pattern",
+      "Facial recognition",
+      "Fingerprint + PIN"
+    ],
+    answer: "Fingerprint + PIN",
+    topic: "Device Security"
   },
   {
-    question: "What is a safe way to store sensitive data?",
-    options: ["Cloud storage without encryption", "Encrypted storage", "On a sticky note", "Shared with friends"],
-    answer: "Encrypted storage",
-    topic: "Data Privacy",
+    question: "Before selling your phone, you should:",
+    options: [
+      "Just delete your photos",
+      "Remove the SIM card only",
+      "Perform factory reset + remove accounts",
+      "Throw it away - it's unsafe to sell"
+    ],
+    answer: "Perform factory reset + remove accounts",
+    topic: "Device Security"
   },
+
+  // Data Privacy (3 questions)
+  {
+    question: "Which social media post poses privacy risks?",
+    options: [
+      "Photo of your lunch",
+      "Check-in at your workplace",
+      "Birthday wishes to a friend",
+      "Shared news article"
+    ],
+    answer: "Check-in at your workplace",
+    topic: "Data Privacy"
+  },
+  {
+    question: "What personal information is safest to share publicly?",
+    options: [
+      "Your mother's maiden name",
+      "Your first pet's name",
+      "Your favorite sports team",
+      "Your childhood street address"
+    ],
+    answer: "Your favorite sports team",
+    topic: "Data Privacy"
+  },
+  {
+    question: "Where should you store sensitive documents digitally?",
+    options: [
+      "Unencrypted cloud folder",
+      "Password-protected encrypted drive",
+      "Email drafts folder",
+      "Public file-sharing service"
+    ],
+    answer: "Password-protected encrypted drive",
+    topic: "Data Privacy"
+  }
 ];
 
 type UserLevel = 'beginner' | 'intermediate' | 'advanced';
